@@ -2,17 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chat with Shop</title>
-  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+  </style>
 </head>
 <body>
-  <div id="chat-root"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.iife.js"></script>
-  <script>
-    n8nChat.createChat({
-      webhookUrl: 'https://vayhong1.app.n8n.cloud/webhook/e53c9162-b390-43b2-8133-d63b40787dc9/chat'
-    });
-  </script>
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    title: 'Chat with Shop',
+    webhookUrl: 'https://vayhong1.app.n8n.cloud/webhook/e53c9162-b390-43b2-8133-d63b40787dc9/chat',
+    theme: {
+      button: {
+        backgroundColor: '#ff4081',
+        textColor: '#fff',
+      },
+      chatWindow: {
+        backgroundColor: '#ffffff',
+        textColor: '#000000',
+      },
+    },
+    position: 'bottom-right',
+  });
+</script>
+
 </body>
 </html>
